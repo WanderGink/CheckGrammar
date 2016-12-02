@@ -17,7 +17,7 @@ public class Rules {
 	public HashMap<Integer, String> track;
 	public String vowel = "aăâeêioôơuưy";
 	public String consonants = "bcdđghklmnpqrstvx";
-	public String finalConsonant = "cgmnpt";
+	public String finalConsonant = "chmngpt";
 	public String[] doubleVowel = {
 			"ai", "ao", "au", "âu", "ay", "ây",
 			"eo", "êu", "ia", "iê", "yê", "iu",
@@ -595,9 +595,10 @@ public class Rules {
 		if (checkInvalid0(x) || checkInvalid1(x) || checkInvalid6(x) || checkInvalid7(x) ||
 				(!checkS(x))||(!checkX(x))||(!checkD(x))||(!checkĐ(x))||(!checkL(x))||(!checkV(x))||
 				(!checkB(x))||(!checkM(x))||(!checkQ(x))||(!checkR(x))||(!checkC(x))||(!checkH(x))||
-				(!checkP(x))|| (!checkT(x)) || (!checkN(x))||(!checkG(x))||(!checkK(x)) ||
-				(!checkVowelFinalConsonant(x)) || (!checkVowelForceFinalLetter(x)))
+				(!checkP(x))|| (!checkT(x)) || (!checkN(x))||(!checkG(x))||(!checkK(x)))
 			return false;
+		if (checkVowelFinalConsonant(x) || checkVowelForceFinalLetter(x))
+			return true;
 		return true;
 	}
 	}
